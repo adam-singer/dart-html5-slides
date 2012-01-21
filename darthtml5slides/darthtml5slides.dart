@@ -324,7 +324,6 @@ class darthtml5slides {
     document.body.nodes.add(el);
   }
   
-  //prettyPrint() native;
   
   void run() {
     slideEls = document.queryAll("section.slides > article");
@@ -341,15 +340,6 @@ class darthtml5slides {
     setupInteraction();
     makeBuildLists();
     
-    //for(var s in slideEls) {
-    //  print(s);
-    //}
-    //write("Hello World!");
-  }
-
-  void write(String message) {
-    // the HTML library defines a global "document" variable
-    //document.query('#status').innerHTML = message;
   }
 }
 
