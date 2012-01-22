@@ -120,7 +120,7 @@ body {
 }
 
 .slides.template-default > article:not(.nobackground):not(.biglogo) {
-  background: url(images/dart.png) 710px 625px no-repeat;  
+  background: url(../images/dart48.png) 99% 99% no-repeat;  
   
   background-color: white;  
 } 
@@ -180,7 +180,11 @@ body {
 
 article.biglogo {
   background: url(../images/dart.png) 50% 50% no-repeat,
-              url(../images/dart.png) 105% 99% no-repeat, white;
+              url(../images/dart48.png) 99% 99% no-repeat, white;
+}
+
+article.smalllogo {
+  /*background: url(../images/dart48.png) 99% 99% no-repeat, white;*/
 }
 
 /* Slides */
@@ -406,7 +410,7 @@ li {
 
 ul li::before {
   /*content: '·';*/
-  content: url('../images/chrome-logo-tiny2.png');
+  content: url('../images/dart16.png');
 
   width: .5em;
   margin-left: -1.0em;
