@@ -3,6 +3,7 @@
 class darthtml5slides {
 
   var PERMANENT_URL_PREFIX = 'http://html5slides.googlecode.com/svn/trunk/';
+  //var PERMANENT_URL_PREFIX = './';
   List SLIDE_CLASSES;
   int curSlide = 0;
   ElementList slideEls;
@@ -29,7 +30,8 @@ class darthtml5slides {
     var el = new Element.tag("link");
     el.rel = 'stylesheet';
     el.type = 'text/css';
-    el.href = PERMANENT_URL_PREFIX + 'styles.css';
+    //el.href = PERMANENT_URL_PREFIX + 'styles.css';
+    el.href = './css/styles.css';
     document.body.nodes.add(el);
     
     el = new Element.tag('meta');

@@ -6273,7 +6273,7 @@ darthtml5slides.prototype.addGeneralStyle = function() {
   var el = ElementWrappingImplementation.ElementWrappingImplementation$tag$factory("link");
   el.set$rel("stylesheet");
   el.set$type("text/css");
-  el.set$href($add(this.PERMANENT_URL_PREFIX, "styles.css"));
+  el.set$href("./css/styles.css");
   html_get$document().get$body().get$nodes().add$1(el);
   el = ElementWrappingImplementation.ElementWrappingImplementation$tag$factory("meta");
   el.set$name("viewport");
