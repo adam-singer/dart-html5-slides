@@ -157,7 +157,6 @@ main() {
         <iframe src='http://try.dartlang.org/s/LtQd'></iframe>
       </article>
 
-
       <article>
         <h1>
           DartEditor
@@ -249,9 +248,77 @@ conventional static type system.
  	 <h1>Examples</h1>
  	 </article>
  	 
+<article>
+<h1>Importing library with <a href="http://financecoding.wordpress.com/2012/01/14/dart-using-prefix-for-import/">prefix</a></h1>
+<section>
+<pre>
+#import('../CaesarCipher/CaesarCipher.dart', prefix:"Caesar");
+#import('../XORCipher/XORCipher.dart', prefix:"XOR");
+
+void main() {
+  String s = "HELLOWORLD";
+  print("${s}");
+  
+  s = XOR.EncryptDecrypt(s);
+  print("After encrypt XOR ${s}");
+  s = XOR.EncryptDecrypt(s);
+  print("After decrypt XOR ${s}");
+ 
+  s = Caesar.EncryptDecrypt(s, true);
+  print("After encrypt Caesar ${s}");
+  s = Caesar.EncryptDecrypt(s, false);
+  print("After decrypt Caesar ${s}");
+}  
+</pre>
+</section>
+</article>
+ 	 
+<article>
+<h1>Throwing <a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/">Darts</a></h1>
+<section>
+<pre>
+  XMLHttpRequest connect() {    
+    var _xmlHttpRequest = new XMLHttpRequest();
+    _xmlHttpRequest.on.error.add((var event) {
+      _print('on error: '+event);
+    });
+    _xmlHttpRequest.on.abort.add((var event) {
+      _print('on abort: '+event);
+    }); 
+    return _xmlHttpRequest;
+  }
+  // Basic http methods
+  getHttp(var uri) {
+    XMLHttpRequest c = connect(); 
+    c.open('GET', uri, false);
+    c.setRequestHeader('Accept', 'application/json');
+    c.send();
+    return c.responseText;
+  }
+</pre>
+</section>
+</article> 	 
+ 	 
+<article>
+<h1>Going <a href="http://financecoding.wordpress.com/2012/01/17/dart-dartbuiltin/">DartVM</a></h1>
+<section>
+<pre>
+copy([var args]) {
+    File src = new File(arg[1]);
+    File dest = new File(arg[2]);
+    var srcStream = src.openInputStream();
+    var destStream = dest.openOutputStream();
+    destStream.write(srcStream.read());
+    srcStream.close();
+    destStream.close();   
+  }
+</pre>
+</section>
+</article> 	 	 
+ 	 
  	 <!-- simple canvas fill http://financecoding.github.com/dart-canvas-fillstyle/ -->
  	 <article class="nobackground">
- 	 <h1>Using fillStyle on Canvas</h1>
+ 	 <h1>Using fillStyle on <a href="http://financecoding.wordpress.com/2012/01/22/dart-fillstyle-on-cavnas/">Canvas</a></h1>
  	 	
         <iframe 
         style="width:165px;height: 165px;"
@@ -276,14 +343,51 @@ conventional static type system.
       	
       </article>
       
+      
+      	 <!-- recursion example http://financecoding.github.com/dart-animated-htree/ -->
+     <article class='fill'>
+     
+        <iframe src='http://financecoding.github.com/dart-animated-htree'></iframe>
+     
+      </article>
+      
+      <article>
+      <h1>HTree draw()</h1>
+<section>
+<pre>
+  drawLine() {
+    if (drawLineIndex < lines.length) {
+      context.beginPath();
+      context.moveTo(lines[drawLineIndex].x0, lines[drawLineIndex].y0);
+      context.lineTo(lines[drawLineIndex].x1, lines[drawLineIndex].y1);
+      context.stroke();
+      drawLineIndex++;
+    }
+    else {
+      drawLineIndex = 0;
+      lines.clear();
+      window.clearInterval(intervalId);
+      stopStartButton.disabled = false;
+    }
+  }    
+</pre>
+</section>
+</article>
+      
+      
  	 <!-- webgl http://financecoding.github.com/dart-nehe-tutorial/Lesson05/Lesson05.html -->
      <article class='fill'>
         <iframe src='http://financecoding.github.com/dart-nehe-tutorial/Lesson05/Lesson05.html'></iframe>
       </article>
  
  	 <!-- terminal http://financecoding.github.com/dart-web-terminal/TerminalFilesystem/TerminalFilesystem.html -->
- 	     <article class='fill'>
+ 	  <article class='fill'>
         <iframe src='http://financecoding.github.com/dart-web-terminal/TerminalFilesystem/TerminalFilesystem.html'></iframe>
+      </article>
+ 
+ <!-- http://financecoding.github.com/dart-coverflow-example/index.html -->
+ 	  <article class='fill'>
+        <iframe src='http://financecoding.github.com/dart-coverflow-example/index.html'></iframe>
       </article>
  
  
