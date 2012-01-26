@@ -79,16 +79,84 @@
 	  <article>
 	  	<h1>Who is the <a href="http://www.dartlang.org/authors/">Dart Team?</a></h1>
 	  	<ul>
-        <li>A ridiculously group of smart people</li>
+        <!-- <li>A ridiculously group of smart people</li> -->
         <li>Joshua Bloch</li> <!-- java core library designer / implementation -->
         <li>Gilad Bracha</li> <!-- java lang spec / smalltalk -->
         <li>Lars Bak</li> <!-- V8 javascript developer --> 
         <li>Peter von der Ahe</li> <!-- newspeak/javac developer -->
         <li>Bob Nystrom</li> <!-- Magpie programming language -->
         <li>Seth Ladd</li> <!-- Developer Advocate, ruby on rails and spring mvc expert -->
+        <li>Eli Brandt</li>
+        <li>David Chandler</li>
+        <li>Florian Loitsch</li>
+        <li>Kathy Walrath</li>
         <li>And more...</li>
         </ul>
 	  </article>	 
+
+	  <article>
+        <h1>
+          New languages are scary, but not this one!
+        </h1>
+        <ul>
+        <li>Familiar and natural, yet new</li>
+        <li>Lightweight feel of a scripting language</li>
+        <li>Static typing when you need the rigor</li>
+        </ul>
+      </article>
+
+	  <article>
+        <h1>
+          A simple OO language, yet powerful
+        </h1>
+        <ul>
+	    <li>Class-based single inheritance with interfaces</li>
+		<li>Optional static types</li>
+		<li>Real lexical scoping (block, method, param, class, lib)</li>
+		<li>Single threaded*</li>
+		<li>Syntactic sugar</li>
+		<li>"Coming from C#, Dart feels natural"</li>
+		<li>"Likely to appeal to Java and JS developers"</li>
+        </ul>
+      </article>
+
+      <article>
+              <h3>
+          A classic Shape/Rectangle/Square example
+        </h3>
+        <section>
+        <pre>
+interface Shape {
+  perimeter(); // return type optional
+}
+
+class Rectangle implements Shape {
+  final num height, width; 
+  // Compact constructor syntax
+  Rectangle(num this.height, num this.width);
+  // Terse function syntax
+  perimeter() =&gt 2*height + 2*width;
+}
+
+class Square extends Rectangle {
+  Square(num size) : super(size, size);
+}
+
+main() {
+  var p = new Square(5).perimeter(); // dynamic type
+  print('Perimeter=$p'); // String interpolation
+}
+        
+</pre>
+        </section>
+
+      </article>
+
+
+	 <article class='fill'>
+        <iframe src='http://try.dartlang.org/s/LtQd'></iframe>
+      </article>
+
 
       <article>
         <h1>
@@ -122,63 +190,11 @@
           Dartium
         </h1>
         <ul>
-        	<li><a href="">Linux</a>http://dl.dropbox.com/u/33138127/dartium/dartium-linux-32bit-Release.tar.gz</li>
-        	<li><a href="">MacOS</a>http://dl.dropbox.com/u/33138127/dartium_macosx/Chromium.app.tar.gz</li>
+        	<li><a href="http://dl.dropbox.com/u/33138127/dartium/dartium-linux-32bit-Release.tar.gz">Linux</a></li>
+        	<li><a href="http://dl.dropbox.com/u/33138127/dartium_macosx/Chromium.app.tar.gz">MacOS</a></li>
         </ul>
       </article>
-
-      <article class='fill'>
-        <iframe src='http://try.dartlang.org/'></iframe>
-      </article>
-
-      <article class='fill'>
-        <h3>
-          Abstract Dart
-        </h3>
-        <p>
-          <img style='height: 500px; width: 500px' src='images/abstract-dart.jpg'>
-        </p>
-        <div class='source white'>
-          Source Adam
-        </div>
-      </article>
-
-      <article>
-        <h3>
-          This slide has some DART code
-        </h3>
-        <section>
-        <pre>
-var els = document.queryAll('pre');
-for (var i = 0, el; i &lt els.length; i++) {
-  el = els[i];
-  if (!el.classes.contains('noprettyprint')) {
-    el.classes.add('prettyprint');
-  }
-}
-        
-</pre>
-        </section>
-
-      </article>
-      
-      <article class='smaller'>
-        <h3>
-          This slide has some code (small font)
-        </h3>
-        <section>
-<pre>
-var els = document.queryAll('pre');
-for (var i = 0, el; i &lt els.length; i++) {
-  el = els[i];
-  if (!el.classes.contains('noprettyprint')) {
-    el.classes.add('prettyprint');
-  }
-}
-</pre>
-        </section>
-      </article>
-      
+            
       <article class='smaller'>
         <q>
 In the past, the type checker always won, 
@@ -212,42 +228,29 @@ conventional static type system.
         </div>
       </article>
       
-      <article class='nobackground'>
-        <h3>
-          A slide with an embed + title
-        </h3>
-        
-        <iframe src='http://financecoding.github.com/dart-coverflow-example/index.html'></iframe>
-      </article>
-
-      <article class='nobackground'>
-        <iframe src='http://financecoding.github.com/dart-coverflow-example/index.html'></iframe>
-      </article>
-
-      <article class='fill'>
-        <h3>
-          Full-slide embed with (optional) slide title on top
-        </h3>
-        <iframe src='http://financecoding.github.com/dart-coverflow-example/index.html'></iframe>
-      </article>
-      
+ 
       <article>
-        <h3>
+        <h1>
           Dart Resources
-        </h3>
+        </h1>
         <!-- Most of the news that dart developers would be interested in will show up on these 3 links -->
         <ul>
           <li><a href='http://www.dartlang.com'>dartlang.com</a></li>
-          <li><a href='http://dartosphere.org/'>dartosphere.org/</a></li>
+          <li><a href='http://dartosphere.org/'>dartosphere.org</a></li>
           <li><a href='https://plus.google.com/s/%23dartlang'>G+ #dartlang</a></li>
+          <li><a href='http://blog.sethladd.com/'>Seth Ladd</a></li>
+          <li><a href='http://phylotic.blogspot.com/'>John Evans</a></li>
+          <li><a href='http://japhr.blogspot.com/search/label/dartlang'>Chris Storm</a></li>
+          <li><a href='http://stackoverflow.com/questions/tagged/dart'>stackoverflow</a></li>
+          <li><a href='http://rosettacode.org/wiki/Category:Dart'>rosettacode</a></li>
         </ul>
       </article>
       
       
       <article>
-        <h3>
+        <h1>
           Thank you!
-        </h3>
+        </h1>
         
         <ul>
           <li><a href='http://www.dartlang.com'>dartlang.com</a></li>
@@ -257,6 +260,16 @@ conventional static type system.
           <li><a href='https://github.com/financeCoding/dart-html5-slides'>Dart HTML5 Slides</a></li>
         </ul>
       </article>
+
+      <article class='fill'>
+        <p>
+          <img style='height: 500px; width: 500px' src='images/abstract-dart.jpg'>
+        </p>
+        <div class='source white'>
+          Source Adam
+        </div>
+      </article>
+
 
     </section>
 
