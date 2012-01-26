@@ -244,6 +244,48 @@ conventional static type system.
         </div>
       </article>
       
+ 	
+ 	 <article>
+ 	 <h1>Examples</h1>
+ 	 </article>
+ 	 
+ 	 <!-- simple canvas fill http://financecoding.github.com/dart-canvas-fillstyle/ -->
+ 	 <article class="nobackground">
+ 	 <h1>Using fillStyle on Canvas</h1>
+ 	 	
+        <iframe 
+        style="width:165px;height: 165px;"
+        src='http://financecoding.github.com/dart-canvas-fillstyle'></iframe>
+      	
+<section>
+<pre>
+  draw() {
+    var rectSize=25;
+    var ctx = document.query('canvas').getContext('2d');
+    for (var i=0;i&lt6;i++){
+      for (var j=0;j&lt6;j++){
+        ctx.fillStyle = 'rgb(' + (255-42.5*i).floor().toString() + ',' + 
+                         (255-42.5*j).floor().toString() + ',0)';
+        ctx.fillRect(j*25,i*25,25,25);
+      }
+    }
+  }     
+</pre>
+</section>
+      	
+      	
+      </article>
+      
+ 	 <!-- webgl http://financecoding.github.com/dart-nehe-tutorial/Lesson05/Lesson05.html -->
+     <article class='fill'>
+        <iframe src='http://financecoding.github.com/dart-nehe-tutorial/Lesson05/Lesson05.html'></iframe>
+      </article>
+ 
+ 	 <!-- terminal http://financecoding.github.com/dart-web-terminal/TerminalFilesystem/TerminalFilesystem.html -->
+ 	     <article class='fill'>
+        <iframe src='http://financecoding.github.com/dart-web-terminal/TerminalFilesystem/TerminalFilesystem.html'></iframe>
+      </article>
+ 
  
       <article>
         <h1>
