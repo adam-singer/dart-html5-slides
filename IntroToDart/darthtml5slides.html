@@ -25,16 +25,15 @@
   <body style='display: none' onload="prettyPrint()">
 
     <section class='slides layout-regular template-default'>
-      
-        
-        
-      
+            
       <article class='biglogo'>
         <p>
         <a href="https://plus.google.com/104569492481999771226/posts">Adam</a>
         <br>
         Jan 28, 2012
-        </p>
+        </p>       
+        <br><br><br><br><br><br><br><br><br><br>    
+      <h1 style="font-size: 320%;"><a href="http://goo.gl/7Gt4r">http://goo.gl/7Gt4r</a></h1>
       </article>
 
       <article>
@@ -63,6 +62,8 @@
         <li>A new set of programming tools</li>
         <li>A new google open source project</li>
         <li>A new way to make web developers life better (also focused on backend developers)</li>
+        <li>A ultra-fast startup with predictable performance</li>
+        <li>A platform with backwards compatibility</li>
         </ul>
       </article>
 	 
@@ -91,8 +92,9 @@
 		</div>
 		<div style="float: right; width: 50%;">
 		<ul>
+		<li>Jim Hugunin</li>
 	    <li>Eli Brandt</li>
-        <li>David Chandler</li>
+        <li>Kasper Lund</li>
         <li>Florian Loitsch</li>
         <li>Kathy Walrath</li>
         <li>And more...</li>
@@ -119,8 +121,8 @@
 	    <li>Class-based single inheritance with interfaces</li>
 		<li>Optional static types</li>
 		<li>Real lexical scoping (block, method, param, class, lib)</li>
-		<li>Single threaded*</li>
-		<li>Syntactic sugar</li>
+		<li>Single threaded, Actor-based concurrency</li>
+		<li>Sane Syntactic sugar</li>
 		<li>"Coming from C#, Dart feels natural"</li>
 		<li>"Likely to appeal to Java and JS developers"</li>
         </ul>
@@ -215,7 +217,13 @@ main() {
           <img style='height: 500px; width: 500px' src='images/dartium-screenshot.png'>
         </p>
       </article>
-            
+      
+      <!--      
+     <article>
+ 	 <h1>Examples</h1>
+ 	 </article>      
+      -->
+       
       <article class='smaller'>
         <q>
 In the past, the type checker always won, 
@@ -257,13 +265,57 @@ conventional static type system.
       </article>
       
  	<!--  isolate example http://try.dartlang.org/s/kbYo -->
- 		 <article class='fill'>
+ 	 <article class='fill'>
         <iframe src='http://try-dart-lang.appspot.com/s/J08Q'></iframe>
       </article>
  	
- 	 <article>
- 	 <h1>Examples</h1>
- 	 </article>
+
+ 	
+ 	<article class='fill'>
+ 	  <iframe src='http://try.dartlang.org/s/Q6Ao'></iframe>
+ 	</article>
+ 	
+ 	<article class='fill'>
+ 		<!-- http://try.dartlang.org/s/c3Eo 
+ 		Generics, maps, lists oh my
+ 		-->
+ 		<iframe src='http://try.dartlang.org/s/c3Eo'></iframe>
+ 	</article>
+ 	
+ 	<article>
+ 		<h1>dart:dom vs dart:html</h1>
+ 		
+ 		<ul>
+ 		<li>dart:dom is for low level access to DOM</li>
+ 		<section><pre>var drawSpeed = 10101;		
+HTMLInputElement drawSpeedInput;	
+drawSpeedInput = document.getElementById('drawSpeedInput');
+drawSpeedInput.onchange = (Event e) {
+  drawSpeed = drawSpeedInput.valueAsNumber;
+};</pre></section>
+ 		<li>dart:html high level abstraction, similar to JQuery</li>
+ 		<section><pre>el = new Element.tag('div');
+el.classes.add('slide-area');
+el.id = 'next-slide-area';
+el.on.click.add((var event) { nextSlide(); }, false);
+document.query('section.slides').nodes.add(el);</pre></section>
+ 		</ul>
+ 	</article>
+ 	
+ 	<article>
+ 	<h1>dart:html <a href="https://github.com/financeCoding/dart-coverflow-example/blob/master/coverflow/coverflow.dart">style & attributes</a></h1>
+ 	
+      <section><pre>ImageElement _img = new Element.html('&ltimg/&gt');
+_img.attributes['src'] = img.src;
+_img.attributes['width'] = sw;
+_img.attributes['height'] = sh;
+_img.attributes['id'] = 'zoom';
+_img.style.margin = (long_side/2).toString()+'px '+(985/2).toString()+'px';
+_img.style.opacity = "0";
+_img.on.click.add((var event) {
+    popdown();
+ });</pre></section> 	
+</article>
  	 
 <article>
 <h1>Importing library with <a href="http://financecoding.wordpress.com/2012/01/14/dart-using-prefix-for-import/">prefix</a></h1>

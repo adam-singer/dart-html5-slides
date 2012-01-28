@@ -59,7 +59,6 @@ class darthtml5slides {
     el = new Element.tag('div');
     el.classes.add('slide-area');
     el.id = 'next-slide-area';
-    //el.addEventListener('click', nextSlide, false);
     el.on.click.add((var event) { nextSlide(); }, false);
     document.query('section.slides').nodes.add(el);
 
