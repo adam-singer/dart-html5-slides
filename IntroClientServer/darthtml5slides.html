@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<!--
+  HTML5 dart
+-->
+
+<html>
+  <head>
+    <title>Presentation</title>
+
+    <meta charset='utf-8'>
+    <!--
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script> -->
+     
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style>
+
+  <body style='display: none' onload="prettyPrint()">
+
+    <section class='slides layout-regular template-default'>
+            
+      <article class='biglogo'>
+        <p>
+        <a href="https://plus.google.com/104569492481999771226/posts">Adam</a>
+        <br>
+        Jan 28, 2012
+        </p>       
+        <br><br><br><br><br><br><br><br><br><br>    
+      <h1 style="font-size: 320%;"><a href="http://goo.gl/7Gt4r">http://goo.gl/7Gt4r</a></h1>
+      </article>
+
+      <article>
+        <h1>
+          Darting Life
+        </h1>
+        
+
+        
+        <p>Who am I</p>
+        
+        <ul>
+        	<li>By day a developer always in need for tools to make life easier</li>
+        	<li>By night a developer who loves learning new technologies that google provides</li>
+        </ul>
+        
+      </article>
+
+	 
+	  <article>
+        <h1>
+          What is Dart?
+        </h1>
+        <ul>
+        <li>A new programming language for structured web programming</li> 
+        <li>A new set of programming tools</li>
+        <li>A new google open source project</li>
+        <li>A new way to make web developers life better (also focused on backend developers)</li>
+        <li>A ultra-fast startup with predictable performance</li>
+        <li>A platform with backwards compatibility</li>
+        </ul>
+      </article>
+	 
+	  <article>
+        <h1>
+          What Dart is Not?
+        </h1>
+        <ul>
+        <li>An esoteric language which only few can fully understand and utilize</li>
+        <li>An attempt to lock you in or dictate what you do</li>
+        </ul>
+      </article>
+
+	  <article>
+	  	<h1>Who is the <a href="http://www.dartlang.org/authors/">Dart Team?</a></h1>
+	  	
+	  	<div style="float: left; width: 50%;">
+	  	<ul>
+	    <li>Joshua Bloch</li> <!-- java core library designer / implementation -->
+        <li>Gilad Bracha</li> <!-- java lang spec / smalltalk -->
+        <li>Lars Bak</li> <!-- V8 javascript developer --> 
+        <li>Peter von der Ahe</li> <!-- newspeak/javac developer -->
+        <li>Bob Nystrom</li> <!-- Magpie programming language -->
+        <li>Seth Ladd</li> <!-- Developer Advocate, ruby on rails and spring mvc expert -->
+        </ul>
+		</div>
+		<div style="float: right; width: 50%;">
+		<ul>
+		<li>Jim Hugunin</li>
+	    <li>Eli Brandt</li>
+        <li>Kasper Lund</li>
+        <li>Florian Loitsch</li>
+        <li>Kathy Walrath</li>
+        <li>And more...</li>
+		</ul>
+		</div> 	
+	  </article>	 
+
+	  <article>
+        <h1>
+          New languages are scary, but not this one!
+        </h1>
+        <ul>
+        <li>Familiar and natural, yet new</li>
+        <li>Lightweight feel of a scripting language</li>
+        <li>Static typing when you need the rigor</li>
+        </ul>
+      </article>
+
+	  <article>
+        <h1>
+          A simple OO language, yet powerful
+        </h1>
+        <ul>
+	    <li>Class-based single inheritance with interfaces</li>
+		<li>Optional static types</li>
+		<li>Real lexical scoping (block, method, param, class, lib)</li>
+		<li>Single threaded, Actor-based concurrency</li>
+		<li>Sane Syntactic sugar</li>
+		<li>"Coming from C#, Dart feels natural"</li>
+		<li>"Likely to appeal to Java and JS developers"</li>
+        </ul>
+      </article>
+
+      <article>
+              <h3>
+          A classic Shape/Rectangle/Square example
+        </h3>
+        <section>
+        <pre>
+interface Shape {
+  perimeter(); // return type optional
+}
+
+class Rectangle implements Shape {
+  final num height, width; 
+  // Compact constructor syntax
+  Rectangle(num this.height, num this.width);
+  // Terse function syntax
+  perimeter() =&gt 2*height + 2*width;
+}
+
+class Square extends Rectangle {
+  Square(num size) : super(size, size);
+}
+
+main() {
+  var p = new Square(5).perimeter(); // dynamic type
+  print('Perimeter=$p'); // String interpolation
+}
+        
+</pre>
+        </section>
+
+      </article>
+
+
+	 <article class='fill'>
+        <iframe src='http://try.dartlang.org/s/LtQd'></iframe>
+      </article>
+
+      <article>
+        <h1>
+          DartEditor
+        </h1>   
+        <ul>
+        	<li><a href="http://gsdview.appspot.com/dart-editor-archive-continuous/latest/DartBuild-linux.gtk.x86.zip">DartEditor Linux x86</a></li>
+        	<li><a href="http://gsdview.appspot.com/dart-editor-archive-continuous/latest/DartBuild-linux.gtk.x86_64.zip">DartEditor Linux x86_64</a></li>
+        	<li><a href="http://gsdview.appspot.com/dart-editor-archive-continuous/latest/DartBuild-macosx.cocoa.x86.zip">DartEditor MacOS x86</a></li>
+        	<li><a href="http://gsdview.appspot.com/dart-editor-archive-continuous/latest/DartBuild-macosx.cocoa.x86_64.zip">DartEditor MacOS x86_64</a></li>
+        	<li><a href="http://gsdview.appspot.com/dart-editor-archive-continuous/latest/DartBuild-win32.win32.x86.zip">DartEditor Win32 x86</a></li>
+        	<li><a href="http://gsdview.appspot.com/dart-editor-archive-continuous/latest/DartBuild-win32.win32.x86_64.zip">DartEditor Win32 x86_64</a></li> 	
+        </ul>
+      </article>
+
+	 <article class='fill'>
+        <p>
+          <img style='height: 500px; width: 500px' src='images/dart-editor.png'>
+        </p>
+      </article>
+
+	 <article>
+        <h1>
+          Dart SDK
+        </h1>
+        <ul>
+        	<li><a href="http://gsdview.appspot.com/dart-editor-archive-continuous/latest/dart-linux.zip">Linux dart-sdk</a></li>
+        	<li><a href="http://gsdview.appspot.com/dart-editor-archive-continuous/latest/dart-macos.zip">MacOS dart-sdk</a></li>
+        	<li><a href="http://gsdview.appspot.com/dart-editor-archive-continuous/latest/dart-win32.zip">Win32 dart-sdk</a></li>
+        </ul>
+      </article>
+	
+	  <article class='fill'>
+        <p>
+          <img style='height: 500px; width: 500px' src='images/dart-sdk.png'>
+        </p>
+      </article>
+
+	  <article>
+        <h1>
+          Dartium
+        </h1>
+        <ul>
+        	<li><a href="http://dl.dropbox.com/u/33138127/dartium/dartium-linux-32bit-Release.tar.gz">Linux</a></li>
+        	<li><a href="http://dl.dropbox.com/u/33138127/dartium_macosx/Chromium.app.tar.gz">MacOS</a></li>
+        </ul>
+      </article>
+            
+      <article class='fill'>
+        <p>
+          <img style='height: 500px; width: 500px' src='images/dartium-screenshot.png'>
+        </p>
+      </article>
+      
+      <!--      
+     <article>
+ 	 <h1>Examples</h1>
+ 	 </article>      
+      -->
+       
+      <article class='smaller'>
+        <q>
+In the past, the type checker always won, 
+it was like Roman Law: 'Guilty until proven innocent'. 
+With the Dart type-checker you are innocent until 
+proven guilty
+        </q>
+        <div class='author'>
+          Gilad Bracha
+        </div>
+      </article>
+      
+      <!-- type annotation  http://try.dartlang.org/s/SCEo -->
+      
+	 <article class='fill'>
+        <iframe src='http://try.dartlang.org/s/SCEo'></iframe>
+      </article>
+      
+      
+      <article class='smaller'>
+        <q>
+This of course drives some people to almost 
+homicidal levels of anger, but they just need 
+to view this as something else. This is not a 
+conventional static type system.
+        </q>
+        <div class='author'>
+          Gilad Bracha
+        </div>
+      </article>
+      
+      <article>
+        <q>
+          Preserving order is important for your sanity
+        </q>
+        <div class='author'>
+          Gilad Bracha
+        </div>
+      </article>
+      
+ 	<!--  isolate example http://try.dartlang.org/s/kbYo -->
+ 	 <article class='fill'>
+        <iframe src='http://try-dart-lang.appspot.com/s/J08Q'></iframe>
+      </article>
+ 	
+
+ 	
+ 	<article class='fill'>
+ 	  <iframe src='http://try.dartlang.org/s/Q6Ao'></iframe>
+ 	</article>
+ 	
+ 	<article class='fill'>
+ 		<!-- http://try.dartlang.org/s/c3Eo 
+ 		Generics, maps, lists oh my
+ 		-->
+ 		<iframe src='http://try.dartlang.org/s/c3Eo'></iframe>
+ 	</article>
+ 	
+ 	<article>
+ 		<h1>dart:dom vs dart:html</h1>
+ 		
+ 		<ul>
+ 		<li>dart:dom is for low level access to DOM</li>
+ 		<section><pre>var drawSpeed = 10101;		
+HTMLInputElement drawSpeedInput;	
+drawSpeedInput = document.getElementById('drawSpeedInput');
+drawSpeedInput.onchange = (Event e) {
+  drawSpeed = drawSpeedInput.valueAsNumber;
+};</pre></section>
+ 		<li>dart:html high level abstraction, similar to JQuery</li>
+ 		<section><pre>el = new Element.tag('div');
+el.classes.add('slide-area');
+el.id = 'next-slide-area';
+el.on.click.add((var event) { nextSlide(); }, false);
+document.query('section.slides').nodes.add(el);</pre></section>
+ 		</ul>
+ 	</article>
+ 	
+ 	<article>
+ 	<h1>dart:html <a href="https://github.com/financeCoding/dart-coverflow-example/blob/master/coverflow/coverflow.dart">style & attributes</a></h1>
+ 	
+      <section><pre>ImageElement _img = new Element.html('&ltimg/&gt');
+_img.attributes['src'] = img.src;
+_img.attributes['width'] = sw;
+_img.attributes['height'] = sh;
+_img.attributes['id'] = 'zoom';
+_img.style.margin = (long_side/2).toString()+'px '+(985/2).toString()+'px';
+_img.style.opacity = "0";
+_img.on.click.add((var event) {
+    popdown();
+ });</pre></section> 	
+</article>
+ 	 
+<article>
+<h1>Importing library with <a href="http://financecoding.wordpress.com/2012/01/14/dart-using-prefix-for-import/">prefix</a></h1>
+<section>
+<pre>
+#import('../CaesarCipher/CaesarCipher.dart', prefix:"Caesar");
+#import('../XORCipher/XORCipher.dart', prefix:"XOR");
+
+void main() {
+  String s = "HELLOWORLD";
+  print("${s}");
+  
+  s = XOR.EncryptDecrypt(s);
+  print("After encrypt XOR ${s}");
+  s = XOR.EncryptDecrypt(s);
+  print("After decrypt XOR ${s}");
+ 
+  s = Caesar.EncryptDecrypt(s, true);
+  print("After encrypt Caesar ${s}");
+  s = Caesar.EncryptDecrypt(s, false);
+  print("After decrypt Caesar ${s}");
+}  
+</pre>
+</section>
+</article>
+ 	 
+<article>
+<h1>Throwing <a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/">Darts</a></h1>
+<section>
+<pre>
+  XMLHttpRequest connect() {    
+    var _xmlHttpRequest = new XMLHttpRequest();
+    _xmlHttpRequest.on.error.add((var event) {
+      _print('on error: '+event);
+    });
+    _xmlHttpRequest.on.abort.add((var event) {
+      _print('on abort: '+event);
+    }); 
+    return _xmlHttpRequest;
+  }
+  // Basic http methods
+  getHttp(var uri) {
+    XMLHttpRequest c = connect(); 
+    c.open('GET', uri, false);
+    c.setRequestHeader('Accept', 'application/json');
+    c.send();
+    return c.responseText;
+  }
+</pre>
+</section>
+</article> 	 
+ 	 
+<article>
+<h1>Going <a href="http://financecoding.wordpress.com/2012/01/17/dart-dartbuiltin/">DartVM</a></h1>
+<section>
+<pre>
+copy([var args]) {
+    File src = new File(arg[1]);
+    File dest = new File(arg[2]);
+    var srcStream = src.openInputStream();
+    var destStream = dest.openOutputStream();
+    destStream.write(srcStream.read());
+    srcStream.close();
+    destStream.close();   
+  }
+</pre>
+</section>
+</article> 	 	 
+ 	 
+<article class="smaller">
+<h1>Unit <a href="https://docs.google.com/document/pub?id=1A3O34aghr44umPA7fc9YGvFAHTYQFVCCRjcLCM6Yaw8">Testing</a></h1>
+<section>
+<pre>
+testFormat() {
+  bool testData; 
+  // Initialize the data to be tested. 
+  setUpData() {
+    testData = false;
+  }
+  // A collection of unit tests
+  group('Test Group Name', () {  
+    // Define a test
+    test('Test Name 1', () {
+      setUpData();
+      // Test some data
+      Expect.isFalse(testData);
+      testData = true; 
+      Expect.isTrue(testData);
+    });
+    // Define another test
+    test('Test Name 2', () {
+      setUpData();
+      // Test some data
+      Expect.isTrue(testData);
+    });
+  });
+}
+</pre>
+</section>
+</article> 	 	 
+ 	 
+ 	 <!-- simple canvas fill http://financecoding.github.com/dart-canvas-fillstyle/ -->
+ 	 <article class="nobackground">
+ 	 <h1>Using fillStyle on <a href="http://financecoding.wordpress.com/2012/01/22/dart-fillstyle-on-cavnas/">Canvas</a></h1>
+ 	 	
+        <iframe 
+        style="width:165px;height: 165px;"
+        src='http://financecoding.github.com/dart-canvas-fillstyle'></iframe>
+      	
+<section>
+<pre>
+  draw() {
+    var rectSize=25;
+    var ctx = document.query('canvas').getContext('2d');
+    for (var i=0;i&lt6;i++){
+      for (var j=0;j&lt6;j++){
+        ctx.fillStyle = 'rgb(' + (255-42.5*i).floor().toString() + ',' + 
+                         (255-42.5*j).floor().toString() + ',0)';
+        ctx.fillRect(j*25,i*25,25,25);
+      }
+    }
+  }     
+</pre>
+</section>
+      	
+      	
+      </article>
+      
+      
+      	 <!-- recursion example http://financecoding.github.com/dart-animated-htree/ -->
+     <article class='fill'>
+     
+        <iframe src='http://financecoding.github.com/dart-animated-htree'></iframe>
+     
+      </article>
+      
+      <article>
+      <h1>HTree draw()</h1>
+<section>
+<pre>
+  drawLine() {
+    if (drawLineIndex < lines.length) {
+      context.beginPath();
+      context.moveTo(lines[drawLineIndex].x0, lines[drawLineIndex].y0);
+      context.lineTo(lines[drawLineIndex].x1, lines[drawLineIndex].y1);
+      context.stroke();
+      drawLineIndex++;
+    }
+    else {
+      drawLineIndex = 0;
+      lines.clear();
+      window.clearInterval(intervalId);
+      stopStartButton.disabled = false;
+    }
+  }    
+</pre>
+</section>
+</article>
+      
+      <!-- game of life -->
+      <!-- https://sites.google.com/site/dartgameoflife/-->
+      <article class='fill'>
+        <iframe src='https://sites.google.com/site/dartgameoflife/'></iframe>
+      </article>
+ 
+      
+ 	 <!-- webgl http://financecoding.github.com/dart-nehe-tutorial/Lesson05/Lesson05.html -->
+     <!--
+     <article class='fill'>
+        <iframe src='http://financecoding.github.com/dart-nehe-tutorial/Lesson05/Lesson05.html'></iframe>
+      </article>
+ 	 -->
+ 	 <article class='fill'>
+        <iframe src='http://financecoding.github.com/dart-nehe-tutorial/Lesson06/Lesson06.html'></iframe>
+      </article>
+ 	 
+ 	 <!-- terminal http://financecoding.github.com/dart-web-terminal/TerminalFilesystem/TerminalFilesystem.html -->
+ 	  <article class='fill'>
+        <iframe src='http://financecoding.github.com/dart-web-terminal/TerminalFilesystem/TerminalFilesystem.html'></iframe>
+      </article>
+ 
+ <!-- http://financecoding.github.com/dart-coverflow-example/index.html -->
+ 	  <article class='fill'>
+        <iframe src='http://financecoding.github.com/dart-coverflow-example/index.html'></iframe>
+      </article>
+ 
+ 
+      <article>
+        <h1>
+          Dart Resources
+        </h1>
+        <!-- Most of the news that dart developers would be interested in will show up on these 3 links -->
+        <ul>
+          <li><a href='http://www.dartlang.com'>dartlang.com</a></li>
+          <li><a href='http://dartosphere.org/'>dartosphere.org</a></li>
+          <li><a href='https://plus.google.com/s/%23dartlang'>G+ #dartlang</a></li>
+          <li><a href='http://blog.sethladd.com/'>Seth Ladd</a></li>
+          <li><a href='http://phylotic.blogspot.com/'>John Evans</a></li>
+          <li><a href='http://japhr.blogspot.com/search/label/dartlang'>Chris Storm</a></li>
+          <li><a href='http://stackoverflow.com/questions/tagged/dart'>stackoverflow</a></li>
+          <li><a href='http://rosettacode.org/wiki/Category:Dart'>rosettacode</a></li>
+        </ul>
+      </article>
+      
+      
+      <article>
+        <h1>
+          Thank you!
+        </h1>        
+        <ul>
+          <li><a href='https://plus.google.com/104569492481999771226'>G+ Adam</a></li>
+          <li><a href='http://financecoding.wordpress.com/'>financecoding.wordpress.com</a></li>
+          <li><a href='https://github.com/financeCoding'>github.com/financeCoding</a></li>
+          <li><a href='https://github.com/financeCoding/dart-html5-slides'>Dart HTML5 Slides</a></li>
+        </ul>
+      </article>
+
+      <article class='fill'>
+        <p>
+          <img style='height: 500px; width: 500px' src='images/abstract-dart.jpg'>
+        </p>
+      </article>
+    </section>
+	<script type="text/javascript" src="darthtml5slides.dart.app.js"></script>
+	 <script
+      src='http://html5slides.googlecode.com/svn/trunk/prettify.js'></script>
+  </body>
+</html>
