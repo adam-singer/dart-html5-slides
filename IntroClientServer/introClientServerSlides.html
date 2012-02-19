@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<!--
+  HTML5 dart
+-->
+
+<html>
+  <head>
+    <title>Presentation</title>
+
+    <meta charset='utf-8'>
+     
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style>
+
+  <body style='display: none' onload="prettyPrint()">
+
+    <section class='slides layout-regular template-default'>
+            
+      <article class='biglogo'>
+        <p>
+        <a href="https://plus.google.com/104569492481999771226/posts">Adam</a>
+        <br>
+        Jan 28, 2012
+        </p>       
+        <br><br><br><br><br><br><br><br><br><br>    
+      <h1 style="font-size: 320%;"><a href="http://goo.gl/UPDATEME">http://goo.gl/UPDATEME</a></h1>
+      </article>
+
+      <article>
+        <h1>
+          Darting Life
+        </h1>
+        
+
+        
+        <p>Who am I</p>
+        
+        <ul>
+        	<li>By day a developer always in need for tools to make life easier</li>
+        	<li>By night a developer who loves learning new technologies that google provides</li>
+        </ul>
+        
+      </article>
+      
+ 	 
+<article>
+<h1>Throwing <a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/">Darts</a></h1>
+<section>
+<pre>
+  XMLHttpRequest connect() {    
+    var _xmlHttpRequest = new XMLHttpRequest();
+    _xmlHttpRequest.on.error.add((var event) {
+      _print('on error: '+event);
+    });
+    _xmlHttpRequest.on.abort.add((var event) {
+      _print('on abort: '+event);
+    }); 
+    return _xmlHttpRequest;
+  }
+  // Basic http methods
+  getHttp(var uri) {
+    XMLHttpRequest c = connect(); 
+    c.open('GET', uri, false);
+    c.setRequestHeader('Accept', 'application/json');
+    c.send();
+    return c.responseText;
+  }
+</pre>
+</section>
+</article> 	 
+ 	  	 
+ 	
+ 
+ 
+ 
+      <article>
+        <h1>
+          Dart Resources
+        </h1>
+        <!-- Most of the news that dart developers would be interested in will show up on these 3 links -->
+        <div style="float: left; width: 50%;">
+        <ul>
+          <li><a href='https://github.com/LUCA-Studios-LLC/LUCA-UI-Framework-for-Dart'>LUCA UI</a></li>
+          <li><a href='http://svn.puremvc.org/PureMVC_Dart'>PureMVC</a></li>
+          <li><a href='http://www.shaftserver.org/'>Shaft App Server</a></li>
+          <li><a href='http://news.dartlang.com'>news.dartlang.com</a></li>
+          <li><a href='http://stackoverflow.com/questions/tagged/dart'>stackoverflow</a></li>
+          <li><a href='http://rosettacode.org/wiki/Category:Dart'>rosettacode</a></li>
+        </ul>
+        </div>
+        <div style="float: right; width: 50%;">
+        <ul>   
+          <li><a href='http://www.dartlang.com'>dartlang.com</a></li>
+          <li><a href='http://dartosphere.org/'>dartosphere.org</a></li>
+          <li><a href='https://plus.google.com/s/%23dartlang'>G+ #dartlang</a></li>
+          <li><a href='http://blog.sethladd.com/'>Seth Ladd</a></li>
+          <li><a href='http://phylotic.blogspot.com/'>John Evans</a></li>
+          <li><a href='http://japhr.blogspot.com/search/label/dartlang'>Chris Storm</a></li>
+        </ul>
+        </div>
+      </article>
+      
+      
+      <article>
+        <h1>
+          Thank you!
+        </h1>        
+        <ul>
+          <li><a href='https://plus.google.com/104569492481999771226'>G+ Adam</a></li>
+          <li><a href='http://financecoding.wordpress.com/'>financecoding.wordpress.com</a></li>
+          <li><a href='https://github.com/financeCoding'>github.com/financeCoding</a></li>
+          <li><a href='DEV/NULL'>Dart Client Server</a></li>
+          <li><a href='https://github.com/financeCoding/dart-html5-slides'>Dart HTML5 Slides</a></li>
+        </ul>
+      </article>
+
+      <article class='fill'>
+        <p>
+          <img style='height: 500px; width: 500px' src='images/abstract-dart.jpg'>
+        </p>
+      </article>
+    </section>
+
+    <script type="application/dart" src="introClientServerSlides.dart"></script>
+    <script src='prettify.js'></script>
+    <script src="dart.js"></script>
+	 
+  </body>
+</html>

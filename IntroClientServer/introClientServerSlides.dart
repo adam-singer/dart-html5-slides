@@ -1,6 +1,6 @@
 #import('dart:html');
 
-class darthtml5slides {
+class introClientServerSlides {
 
   var PERMANENT_URL_PREFIX = 'http://html5slides.googlecode.com/svn/trunk/';
   //var PERMANENT_URL_PREFIX = './';
@@ -8,7 +8,7 @@ class darthtml5slides {
   int curSlide = 0;
   ElementList slideEls;
   
-  darthtml5slides() {
+  introClientServerSlides() {
   }
 
   setupFrames() {
@@ -345,5 +345,5 @@ class darthtml5slides {
 }
 
 void main() {
-  new darthtml5slides().run();
+  new introClientServerSlides().run();
 }
