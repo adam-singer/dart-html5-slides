@@ -38,10 +38,7 @@
           Darting Life
         </h1>
         
-
-        
         <p>Who am I</p>
-        
         <ul>
         	<li>By day a developer always in need for tools to make life easier</li>
         	<li>By night a developer who loves learning new technologies that google provides</li>
@@ -49,88 +46,352 @@
         
       </article>
       
- 	 
+ 	 <article>
+    <h1>Possible Client Hosting</h1>
+    <ul>
+      <li>Any Web Server</li>
+      <li>AppEngine</li>
+      <!--<li>Belay</li>-->
+      <li>Github Pages</li>
+    </ul>
+   </article>
+
+   <article>
+    <h1>Example AppEngine Static Resources</h1>
+    <section>
+    <pre>application: mydartworld
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /
+  script: main.py
+
+- url: /(.*)
+  static_files: resources/\1
+  upload: resources/(.*\.(html|js|dart|app|css))</pre></section>
+    <ul>
+    <li><a href="http://mydartworld.appspot.com/" target="_blank" >mydartworld.appspot.com</a></li>
+    <li><a href="http://goo.gl/cw7CI" target="_blank" >isolate_hello</a></li>
+    </ul>
+   </article>
+
 <article>
-<h1>Throwing <a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/">Darts</a></h1>
+<h1>Swarm backed by App Engine</h1>
+<ul>
+<li>Loaded from Google App Engine</li>
+<li>Loads user feeds for Google Reader</li>
+</ul>
+</article>
+
+<article>
+<h1>Dart as a HTTP server</h1>
+<ul>
+  <li><a href="http://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/chat/http.dart" target="_blank" >http.dart</a></li>
+  <li>Restful API</li>
+  <li>Client HTTP Interfaces</li>
+  <li>System communications</li>
+<ul>
+</article>
+
+<article>
+<h1>Samples using http.dart</h1>
+<ul>
+  <li><a href="http://127.0.0.1:8080/" target="_blank" >Time</a></li>
+  <li><a href="http://127.0.0.1:9090/Total.html" target="_blank" >Total</a></li>
+  <li><a href="http://127.0.0.1:8123/dart_client/index.html" target="_blank" >Chat</a></li>
+  <li><a href="http://127.0.0.1:8888/DartBoardClient.html"  target="_blank" >DartBoardClient</a></li>
+  <li><a href="http://127.0.0.1:8888/swarm/swarm.html"  target="_blank" >CodeSwarm</a></li>
+</ul>
+</article>
+
+<article>
+<h1>Simple Dart Server<h1>
 <section>
-<pre>
-  XMLHttpRequest connect() {    
-    var _xmlHttpRequest = new XMLHttpRequest();
-    _xmlHttpRequest.on.error.add((var event) {
-      _print('on error: '+event);
+<pre>#import("http.dart");
+void main() {
+  HTTPServer server = new HTTPServer();
+  server.listen(HOST, PORT, 
+    (HTTPRequest req, HTTPResponse rsp) {
+        requestReceivedHandler(req, rsp);
     });
-    _xmlHttpRequest.on.abort.add((var event) {
-      _print('on abort: '+event);
-    }); 
-    return _xmlHttpRequest;
-  }
-  // Basic http methods
-  getHttp(var uri) {
-    XMLHttpRequest c = connect(); 
-    c.open('GET', uri, false);
-    c.setRequestHeader('Accept', 'application/json');
-    c.send();
-    return c.responseText;
+}
+void requestReceivedHandler(HTTPRequest request, 
+                            HTTPResponse response) {
+  String htmlResponse = '''&lthtml&gt&ltbody&gt
+  &ltp&gtCurrent time: ${new Date.now()}&lt/p&gt
+  &lt/body&gt&lt/html&gt''';
+  response.setHeader("Content-Type", 
+                     "text/html; charset=UTF-8");
+  response.writeString(htmlResponse, null);
+  response.writeDone();
+}</pre></section>
+</article>
+
+<!--
+<article>
+<h1>DartBoardClient</h1>-->
+<!--<iframe src="http://127.0.0.1:8888/DartBoardClient.html"></iframe>-->
+<!--
+</article>
+ 
+<article>
+<h1>CodeSwarm</h1>-->
+<!--<iframe src="http://127.0.0.1:8888/swarm/swarm.html"></iframe>-->
+
+<!-- /article -->
+
+<!--
+cd ~/dart_bleeding_demo/dart/samples/total && ./bin/start-total --no-build
+-->
+<!--<article>-->
+<!--<iframe height="400" width="400" src="http://127.0.0.1:9090/Total.html"></iframe>-->
+<!--<h1 style="font-size: 320%;"><a href="http://127.0.0.1:9090/Total.html">Total Sample</a></h1>-->
+
+<!--</article>-->
+
+<!-- 
+cd ~/dart_bleeding_demo/dart/samples/chat
+../../xcodebuild/Release_ia32/dart chat_server.dart
+-->
+<!--<article class="fill">-->
+<!--
+<p>
+  <img style='height: 500px; width: 500px' src='images/Chat.png'>
+</p>
+-->
+<!--
+<iframe height="250" width="250" style="" src="http://127.0.0.1:8123/dart_client/index.html"></iframe>
+<iframe height="250" width="250" style="top:50%;" src="http://127.0.0.1:8123/dart_client/index.html"></iframe>-->
+<!--</article>-->
+
+<!--
+cd ~/dart_bleeding_demo/dart/samples/time
+../../xcodebuild/Debug_ia32/dart time_server.dart
+-->
+<!--<article>
+<iframe height="150" width="250" src="http://127.0.0.1:8080/"></iframe>
+</article>-->
+
+<article>
+<h1><a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/" target="_blank" >Client GET Request</a></h1>
+<b>
+<section><pre>
+// Basic http methods
+getHttp(var uri) {
+  XMLHttpRequest c = new XMLHttpRequest(); 
+  c.open('GET', uri, false);
+  c.setRequestHeader('Accept', 'application/json');
+  c.send();
+  return c.responseText;
+}</pre></section></b>
+</article> 	 
+
+<article>
+<h1><a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/" target="_blank" >Client POST Request</a></h1>
+<b>
+<section><pre>
+XMLHttpRequest sendRequest(String url, var data, 
+                    var onSuccess, var onError) {
+  XMLHttpRequest request = new XMLHttpRequest();
+  request.on.readyStateChange.add((Event event) {
+    if (request.readyState != 4) return;
+    if (request.status == 200) {
+      onSuccess(JSON.parse(request.responseText));
+    } else {
+      onError();
+    }
+  });
+  request.open("POST", url, true);
+  request.setRequestHeader("Content-Type", 
+                      "text/plain;charset=UTF-8");
+  request.send(JSON.stringify(data));   
+  return request;
+} </pre></section></b>
+</article>  
+
+<article>
+<h1><a href="https://github.com/financeCoding/DartBoard/blob/master/src/DartBoardServer/IsolatedServer.dart" target="_blank" >Using Isolates In a Server</a></h1>
+<b>
+<section>
+<pre>class IsolatedServer extends Isolate {
+  Map _requestHandlers; // Request handlers 
+  HTTPServer _server;  // HTTP server instance.
+    IsolatedServer() : super() {
+    _requestHandlers = new Map();
+  }  
+  void main() {
+    this.port.receive(
+      void _(var message, SendPort replyTo) {
+      if (message.startServer) {
+        _server = new HTTPServer();
+        _server.listen(_host,_port,
+            (HTTPRequest req, HTTPResponse rsp) =>
+                _requestReceivedHandler(req, rsp));
+        replyTo.send(new DartBoardServerStatus.started(_server.port), null);
+       }
+      });
   }
 </pre>
-</section>
-</article> 	 
+</section></b>
+</article>
  	  	 
- 	
- 
- 
- 
-      <article>
-        <h1>
-          Dart Resources
-        </h1>
-        <!-- Most of the news that dart developers would be interested in will show up on these 3 links -->
-        <div style="float: left; width: 50%;">
-        <ul>
-          <li><a href='https://github.com/LUCA-Studios-LLC/LUCA-UI-Framework-for-Dart'>LUCA UI</a></li>
-          <li><a href='http://svn.puremvc.org/PureMVC_Dart'>PureMVC</a></li>
-          <li><a href='http://www.shaftserver.org/'>Shaft App Server</a></li>
-          <li><a href='http://news.dartlang.com'>news.dartlang.com</a></li>
-          <li><a href='http://stackoverflow.com/questions/tagged/dart'>stackoverflow</a></li>
-          <li><a href='http://rosettacode.org/wiki/Category:Dart'>rosettacode</a></li>
-        </ul>
-        </div>
-        <div style="float: right; width: 50%;">
-        <ul>   
-          <li><a href='http://www.dartlang.com'>dartlang.com</a></li>
-          <li><a href='http://dartosphere.org/'>dartosphere.org</a></li>
-          <li><a href='https://plus.google.com/s/%23dartlang'>G+ #dartlang</a></li>
-          <li><a href='http://blog.sethladd.com/'>Seth Ladd</a></li>
-          <li><a href='http://phylotic.blogspot.com/'>John Evans</a></li>
-          <li><a href='http://japhr.blogspot.com/search/label/dartlang'>Chris Storm</a></li>
-        </ul>
-        </div>
-      </article>
+<article>
+<h1><a href="https://github.com/financeCoding/DartBoard/blob/master/src/DartBoardServer/DartBoardServerLib.dart" target="_blank" >Adding handlers</a></h1>
+<b>
+<section>
+<pre>class DartBoardServer extends IsolatedServer {
+
+addHandler("/DartBoardClient.html",
+  (HTTPRequest request, HTTPResponse response) =>
+      fileHandler(request, response, "/DartBoardClient.html"));
+addHandler("/DartBoardClient.dart",
+  (HTTPRequest request, HTTPResponse response) =>
+      fileHandler(request, response, "/index.dart"));
+addHandler("/DartBoardClient.dart.js",
+  (HTTPRequest request, HTTPResponse response) =>
+      fileHandler(request, response, "/DartBoardClient.dart.js"));
+}</pre></section></b>
+</article> 
+
+<article>
+<h1><a href="https://github.com/financeCoding/DartBoard/blob/master/src/DartBoardServer/IsolatedServer.dart" target="_blank" >Invocation of the handler</a></h1>
+<b>
+<section>
+<pre>void _requestReceivedHandler(HTTPRequest request, HTTPResponse response) {
+    var requestHandler =_requestHandlers[request.path];
+    if (requestHandler != null) {
+      requestHandler(request, response);
+    } else {
+      _notFoundHandler(request, response);
+    }
+  }</pre></section></b>
+</article> 
+
+<article>
+<h1><a href="https://github.com/financeCoding/DartBoard/blob/master/src/DartBoardServer/DartBoardServerLib.dart" target="_blank" >A more interesting handler</a></h1>
+<b>
+<section>
+<pre>addHandler("/getCode", (HTTPRequest request, HTTPResponse response) {
+  if (request.queryParameters.containsKey('docId')) {
+    String docId = request.queryParameters['docId'];
+    request.dataEnd = (String data) {
+      final receiveCouchPort = new ReceivePort();
+      receiveCouchPort.receive(
+        (var message, SendPort notUsedHere) {
+          receiveCouchPort.close();
+          _sendJSONResponse(response,
+            {'docId':docId, 'code': JSON.parse(message)['code']});
+        });  
+      new CouchIsolate().spawn().then((SendPort sp) {
+        Map m = {'command':'getCode', 'dbName':'codedb' ,'docId':docId};
+        sp.send(m, receiveCouchPort.toSendPort());
+      });  
+    };
+  } 
+});</pre></section></b>
+</article> 
+
+<article>
+<h1><a href="https://github.com/financeCoding/DartBoard/blob/master/src/DartBoardServer/CouchDBWrapperImpl.dart" target="_blank" >Using HTTPClient</a></h1>
+<b><section>
+<pre>
+new CouchIsolate().spawn().then((SendPort sp) {
+  Map m = {'command':'getCode', 'dbName':'codedb' ,'docId':docId};
+  sp.send(m, receiveCouchPort.toSendPort());
+}); 
+[... CouchIsolate ...]
+getHttp(var uri) {
+  var h = new HTTPClient();
+  h.open('GET', host, port, uri);
+  h.openHandler = (HTTPClientRequest request) {
+    request.setHeader('Accept', 'application/json');
+    request.responseReceived = (HTTPClientResponse response) {        
+      response.dataEnd =  (String r) {
+        replyTo.send(r);
+        h.shutdown();
+      };
+    };
+    request.writeDone();
+  };
+}</pre>
+</section></b>
+</article>  
+
+<!--
+<article>
+<h1>Using Isolates In a Client</h1>
+<section>
+<pre>
+</pre>
+</section>
+</article> 	
+-->
+  
+<article>
+<h1>Upcoming/Other possibilities with Dart</h1>
+<ul>
+  <li>New Http library added to dart</li>
+  <li>WebSockets - Still being worked on</li>
+  <li>Belay - New security framework</li>
+  <li>Interoperability with native system</li>
+  <li>Message bus</li>
+</ul>
+</article>
+
+<article>
+  <h1>
+    Dart Resources
+  </h1>
+  <!-- Most of the news that dart developers would be interested in will show up on these 3 links -->
+  <div style="float: left; width: 50%;">
+  <ul>
+    <li><a href='https://github.com/LUCA-Studios-LLC/LUCA-UI-Framework-for-Dart'>LUCA UI</a></li>
+    <li><a href='http://trac.puremvc.org/PureMVC_Dart'>PureMVC</a></li>
+    <li><a href='http://www.shaftserver.org/'>Shaft App Server</a></li>
+    <li><a href='https://sites.google.com/site/belayresearchproject/introduction'>Belay</a></li>
+    <li><a href='http://news.dartlang.com'>news.dartlang.com</a></li>
+    <li><a href='http://stackoverflow.com/questions/tagged/dart'>stackoverflow</a></li>
+    <li><a href='http://rosettacode.org/wiki/Category:Dart'>rosettacode</a></li>
+  </ul>
+  </div>
+  <div style="float: right; width: 50%;">
+  <ul>   
+    <li><a href='http://www.dartlang.com'>dartlang.com</a></li>
+    <li><a href='http://dartosphere.org/'>dartosphere.org</a></li>
+    <li><a href='https://plus.google.com/s/%23dartlang'>G+ #dartlang</a></li>
+    <li><a href='http://blog.sethladd.com/'>Seth Ladd</a></li>
+    <li><a href='http://phylotic.blogspot.com/'>John Evans</a></li>
+    <li><a href='http://japhr.blogspot.com/search/label/dartlang'>Chris Storm</a></li>
+  </ul>
+  </div>
+</article>
       
       
-      <article>
-        <h1>
-          Thank you!
-        </h1>        
-        <ul>
-          <li><a href='https://plus.google.com/104569492481999771226'>G+ Adam</a></li>
-          <li><a href='http://financecoding.wordpress.com/'>financecoding.wordpress.com</a></li>
-          <li><a href='https://github.com/financeCoding'>github.com/financeCoding</a></li>
-          <li><a href='DEV/NULL'>Dart Client Server</a></li>
-          <li><a href='https://github.com/financeCoding/dart-html5-slides'>Dart HTML5 Slides</a></li>
-        </ul>
-      </article>
+<article>
+  <h1>
+    Thank you!
+  </h1>        
+  <ul>
+    <li><a href='https://plus.google.com/104569492481999771226'>G+ Adam</a></li>
+    <li><a href='http://financecoding.wordpress.com/'>financecoding.wordpress.com</a></li>
+    <li><a href='https://github.com/financeCoding'>github.com/financeCoding</a></li>
+    <li><a href='DEV/NULL'>Dart Client Server</a></li>
+    <li><a href='https://github.com/financeCoding/dart-html5-slides'>Dart HTML5 Slides</a></li>
+  </ul>
+</article>
 
-      <article class='fill'>
-        <p>
-          <img style='height: 500px; width: 500px' src='images/abstract-dart.jpg'>
-        </p>
-      </article>
-    </section>
+<article class='fill'>
+  <p>
+    <img style='height: 500px; width: 500px' src='images/abstract-dart.jpg'>
+  </p>
+</article>
+</section>
 
-    <script type="application/dart" src="introClientServerSlides.dart"></script>
-    <script src='prettify.js'></script>
-    <script src="dart.js"></script>
+<script type="application/dart" src="introClientServerSlides.dart"></script>
+<script src='prettify.js'></script>
+<script src="dart.js"></script>
 	 
   </body>
 </html>
