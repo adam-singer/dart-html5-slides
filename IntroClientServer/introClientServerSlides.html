@@ -179,13 +179,22 @@ cd ~/dart_bleeding_demo/dart/samples/time
 <h1><a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/" target="_blank" >Client GET Request</a></h1>
 <b>
 <section><pre>
-// Basic http methods
-getHttp(var uri) {
-  XMLHttpRequest c = new XMLHttpRequest(); 
-  c.open('GET', uri, false);
-  c.setRequestHeader('Accept', 'application/json');
-  c.send();
-  return c.responseText;
+XMLHttpRequest sendRequest(String url, 
+                           var onSuccess, var onError) {
+  XMLHttpRequest request = new XMLHttpRequest();
+  request.on.readyStateChange.add((Event event) {
+    if (request.readyState != 4) return;
+    if (request.status == 200) {
+      onSuccess(JSON.parse(request.responseText));
+    } else {
+      onError();
+    }
+  });
+  request.open("POST", url, true);
+  request.setRequestHeader('Accept', 'application/json');
+  request.send();   
+  return request;
+} 
 }</pre></section></b>
 </article> 	 
 
