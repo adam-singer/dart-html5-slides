@@ -79,7 +79,7 @@ handlers:
    </article>
 
 <article>
-<h1>Swarm Backed by AppEngine</h1>
+<h1><a href="http://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/swarm/">Swarm Backed by AppEngine</a></h1>
 <ul>
 <li>Loaded from Google AppEngine</li>
 <li>Loads user feeds for Google Reader</li>
@@ -176,10 +176,10 @@ cd ~/dart_bleeding_demo/dart/samples/time
 </article>-->
 
 <article>
-<h1><a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/" target="_blank" >Client GET Request</a></h1>
+<h1><a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/" target="_blank" >Client Request</a></h1>
 <b>
 <section><pre>
-XMLHttpRequest sendRequest(String url, 
+XMLHttpRequest sendRequest(String method, String url, 
                            var onSuccess, var onError) {
   XMLHttpRequest request = new XMLHttpRequest();
   request.on.readyStateChange.add((Event event) {
@@ -190,14 +190,20 @@ XMLHttpRequest sendRequest(String url,
       onError();
     }
   });
-  request.open("POST", url, true);
+  request.open(method, url, true);
   request.setRequestHeader('Accept', 'application/json');
-  request.send();   
+  if (method == 'post' || method == 'put') {
+    request.setRequestHeader("Content-Type", "application/json");
+    request.send(JSON.stringify(data)); 
+  } else {
+    request.send(); 
+  }  
   return request;
 } 
 }</pre></section></b>
 </article> 	 
 
+<!--
 <article>
 <h1><a href="http://financecoding.wordpress.com/2012/01/15/dart-throwing-darts-from-couchdb/" target="_blank" >Client POST Request</a></h1>
 <b>
@@ -220,6 +226,7 @@ XMLHttpRequest sendRequest(String url, var data,
   return request;
 } </pre></section></b>
 </article>  
+-->
 
 <article>
 <h1><a href="https://github.com/financeCoding/DartBoard/blob/master/src/DartBoardServer/IsolatedServer.dart" target="_blank" >Using Isolates in a Server</a></h1>
@@ -369,6 +376,7 @@ getHttp(var uri) {
   </div>
   <div style="float: right; width: 50%;">
   <ul>   
+    <li><a href="https://github.com/chrisbu/CrimsonHttp">CrimsonHttp</a></li>
     <li><a href='http://www.dartlang.com'>dartlang.com</a></li>
     <li><a href='http://dartosphere.org/'>dartosphere.org</a></li>
     <li><a href='https://plus.google.com/s/%23dartlang'>G+ #dartlang</a></li>
