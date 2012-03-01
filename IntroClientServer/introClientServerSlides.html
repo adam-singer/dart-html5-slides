@@ -265,7 +265,7 @@ addHandler("/DartBoardClient.html",
       fileHandler(request, response, "/DartBoardClient.html"));
 addHandler("/DartBoardClient.dart",
   (HTTPRequest request, HTTPResponse response) =>
-      fileHandler(request, response, "/index.dart"));
+      fileHandler(request, response, "/DartBoardClient.dart"));
 addHandler("/DartBoardClient.dart.js",
   (HTTPRequest request, HTTPResponse response) =>
       fileHandler(request, response, "/DartBoardClient.dart.js"));
@@ -276,7 +276,12 @@ addHandler("/DartBoardClient.dart.js",
 <h1><a href="https://github.com/financeCoding/DartBoard/blob/master/src/DartBoardServer/IsolatedServer.dart" target="_blank" >Invocation of the Handler</a></h1>
 <b>
 <section>
-<pre>void _requestReceivedHandler(HTTPRequest request, HTTPResponse response) {
+<pre>  void addHandler(String path, 
+       void handler(HTTPRequest request, HTTPResponse response)) {
+    _requestHandlers[path] = handler;
+  }
+
+  void _requestReceivedHandler(HTTPRequest request, HTTPResponse response) {
     var requestHandler =_requestHandlers[request.path];
     if (requestHandler != null) {
       requestHandler(request, response);
@@ -349,11 +354,11 @@ getHttp(var uri) {
 <article>
 <h1>Upcoming Possibilities with Dart</h1>
 <ul>
-  <li>New HTTP library added to Dart</li>
+  <li>HTTP library added to DartVM</li>
   <li>WebSockets - Still being worked on</li>
   <li>Belay - New security framework</li>
   <li>Interoperability with native system</li>
-  <li>Message bus</li>
+  <li>Message buses</li>
 </ul>
 </article>
 
