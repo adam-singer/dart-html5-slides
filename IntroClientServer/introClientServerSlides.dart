@@ -5,44 +5,26 @@ class introClientServerSlides {
   var PERMANENT_URL_PREFIX = 'http://html5slides.googlecode.com/svn/trunk/';
   //var PERMANENT_URL_PREFIX = './';
   List SLIDE_CLASSES;
-  int curSlide = 0;
+  static int curSlide = 0;
   ElementList slideEls;
   
-  introClientServerSlides() {
-  }
-
-  setupFrames() {
-    var frames = document.queryAll('iframe');
-    IFrameElement frame;
-    for (var i = 0; frame = frames[i]; i++) {
-      //frame.
-      
-      //frame._src = frame.src;
-      //disableFrame(frame);
-    }
-    
-    //enableSlideFrames(curSlide);
-    //enableSlideFrames(curSlide + 1);
-    //enableSlideFrames(curSlide + 2);
-  }
-  
   addGeneralStyle() {
-    var el = new Element.tag("link");
+    LinkElement el = new Element.tag("link");
     el.rel = 'stylesheet';
     el.type = 'text/css';
     //el.href = PERMANENT_URL_PREFIX + 'styles.css';
     el.href = './css/styles.css';
     document.body.nodes.add(el);
     
-    el = new Element.tag('meta');
-    el.name = 'viewport';
-    el.content = 'width=1100,height=750';
-    document.query('head').nodes.add(el);
+    MetaElement mel = new Element.tag('meta');
+    mel.name = 'viewport';
+    mel.content = 'width=1100,height=750';
+    document.query('head').nodes.add(mel);
     
-    el = new Element.tag('meta');
-    el.name = 'apple-mobile-web-app-capable';
-    el.content = 'yes';
-    document.query('head').nodes.add(el);
+    mel = new Element.tag('meta');
+    mel.name = 'apple-mobile-web-app-capable';
+    mel.content = 'yes';
+    document.query('head').nodes.add(mel);
     
   }
   
@@ -157,31 +139,25 @@ class introClientServerSlides {
   }
   
   updateHash() {
-    window.location.replace('#' + (curSlide + 1));
+    window.location.replace('#' "${(curSlide + 1)}");
   }
 
   
   updateSlides() {
     for (var i = 0; i < slideEls.length; i++) {
-      switch (i) {
-        case curSlide - 2:
-          updateSlideClass(i, 'far-past');
-          break;
-        case curSlide - 1:
-          updateSlideClass(i, 'past');
-          break;
-        case curSlide:
-          updateSlideClass(i, 'current');
-          break;
-        case curSlide + 1:
-          updateSlideClass(i, 'next');
-          break;
-        case curSlide + 2:
-          updateSlideClass(i, 'far-next');
-          break;
-        default:
-          updateSlideClass(i, null);
-          break;
+      
+      if (i == curSlide - 2) {
+        updateSlideClass(i, 'far-past');
+      } else if (i == curSlide - 1) {
+        updateSlideClass(i, 'past');
+      } else if (i == curSlide) {
+        updateSlideClass(i, 'current');
+      } else if (i == curSlide + 1) {
+        updateSlideClass(i, 'next');
+      } else if (i == curSlide + 2) {
+        updateSlideClass(i, 'far-next');
+      } else {
+        updateSlideClass(i, null);
       }
     }
 
@@ -308,9 +284,9 @@ class introClientServerSlides {
       }
     }
 
-    var el = new Element.tag('script');
+    ScriptElement el = new Element.tag('script');
     el.type = 'text/javascript';
-    el.src = PERMANENT_URL_PREFIX + 'prettify.js';
+    el.src = "${PERMANENT_URL_PREFIX}"'prettify.js';
 //    el.onload = function() {
 //      prettyPrint();
 //    }
@@ -328,9 +304,6 @@ class introClientServerSlides {
   
   void run() {
     slideEls = document.queryAll("section.slides > article");
-    
-
-    //setupFrames();
 
     addGeneralStyle();
     addPrettify();
@@ -340,7 +313,6 @@ class introClientServerSlides {
     updateSlides();
     setupInteraction();
     makeBuildLists();
-    
   }
 }
 
